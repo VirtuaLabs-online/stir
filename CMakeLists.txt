@@ -49,6 +49,8 @@ target_sources(
     src/filters/stir-router.h
     src/filters/stir-highpass.c
     src/filters/stir-highpass.h
+    src/filters/stir-midpass.c
+    src/filters/stir-midpass.h
     src/filters/stir-tremolo.c
     src/filters/stir-tremolo.h
     src/init.c

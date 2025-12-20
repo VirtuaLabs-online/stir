@@ -11,6 +11,7 @@
 #include "filters/stir-gain.h"
 #include "filters/stir-tremolo.h"
 #include "filters/stir-highpass.h"
+#include "filters/stir-midpass.h"
 #include "util/base.h"
 #include "util/c99defs.h"
 
@@ -91,6 +92,8 @@ bool obs_module_load(void)
 	obs_log(LOG_INFO, "Tremolo: registered filter");
 	obs_register_source(&stir_highpass_info);
 	obs_log(LOG_INFO, "Highpass: registered filter");
+	obs_register_source(&stir_midpass_info);
+	obs_log(LOG_INFO, "Midpass: registered filter");
 	obs_register_source(&stir_echo_info);
 	obs_log(LOG_INFO, "Echo: registered filter");
 	obs_log(LOG_INFO, "STIR modules loaded successfully (version %s)", PLUGIN_VERSION);

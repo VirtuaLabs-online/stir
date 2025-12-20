@@ -263,6 +263,8 @@ struct obs_audio_data *stir_router_process(void *data, struct obs_audio_data *au
 		return audio;
 	}
 
+    
+
 	if (channels < 2)
 		return audio;
 
@@ -374,8 +376,8 @@ obs_properties_t *stir_router_properties(void *data)
 	obs_properties_t *ms = obs_properties_create();
 	obs_property_t *msg =
 		obs_properties_add_group(props, "ms_encoding", "Mid Side Encoding", OBS_GROUP_CHECKABLE, ms);
-	obs_properties_add_float_slider(ms, "ms_width_add", "+Side Width", -1.0, 2.0, 0.01);
-	obs_properties_add_float_slider(ms, "ms_width_sub", "-Side Width", -1.0, 2.0, 0.01);
+	obs_properties_add_float_slider(ms, "ms_width_mid", "+Side Width", -1.0, 2.0, 0.01);
+	obs_properties_add_float_slider(ms, "ms_width_side", "-Side Width", -1.0, 2.0, 0.01);
 
 	rebuild_ch_list(props, stir_router->ms_encoding);
 	obs_property_set_modified_callback(msg, ms_cb);
